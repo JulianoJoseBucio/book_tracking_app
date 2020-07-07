@@ -1,7 +1,7 @@
 import React from 'react';
 import Book from './Book';
 
-const Bookshelf = props => {
+const Shelf = props => {
   const { shelf, books, onMove } = props;
   const booksOnThisShelf = books.filter(book => book.shelf === shelf.key);
   // console.log('booksOnThisShelf', booksOnThisShelf);
@@ -19,4 +19,4 @@ const Bookshelf = props => {
   );
 };
 
-export default Bookshelf;
+export default Shelf;

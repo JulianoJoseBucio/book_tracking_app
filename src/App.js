@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { debounce } from 'throttle-debounce';
+import { throttle } from 'throttle-debounce';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
-import  ListBooks from './ListBooks';
-import SearchBooks from './SearchBooks';
+import  ListBooks from './List';
+import SearchBooks from './Search';
 
 const bookshelves = [
   { key: 'currentlyReading', name: 'Currently Reading' },
@@ -43,7 +43,7 @@ moveBook = (book, shelf) => {
     }));
   }
 };
- searchForBooks =debounce(300, false, query => {
+ searchForBooks = throttle(1000, false, query => {
    if (query.length > 0) {
      BooksAPI.search(query).then(books => {
        if (books.error) {

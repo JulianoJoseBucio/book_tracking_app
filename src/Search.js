@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchResults from './SearchResults';
+import SearchResults from './Results';
 import { Link } from 'react-router-dom';
-import SearchBooksInput from './SearchBooksInput';
+import SearchBooksInput from './SearchInput';
 
 class SearchBooks extends Component {
   render() {
